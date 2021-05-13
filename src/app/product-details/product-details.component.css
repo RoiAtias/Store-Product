@@ -1,0 +1,19 @@
+.requried:after{
+    content: " *";
+    color: red;
+  }
+  
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.img {
+  float: left;
+  width:  100px;
+  height: 100px;
+  background-size: cover;
+}
+
+.pad10-b{
+  padding-bottom:7% !important
+}

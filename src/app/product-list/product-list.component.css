@@ -1,0 +1,42 @@
+.boarder-tr{
+    border-color: red !important;
+}
+.img {
+    float: left;
+    width: 83px;
+    height: 78px;
+    background-size: cover;
+  }
+
+
+.active{
+background-color: #007ad9 !important;
+ } 
+
+.list-group-item {
+    border: 1px solid #e7eaec !important;
+    margin-bottom: 7px  !important;
+    padding: 10px 15px !important;
+    position: relative !important;
+}
+
+.ibox-content-grid {
+    /* background-color: #ffffff; */
+    background-color: unset !important;
+    padding: 15px 0px 20px 0px !important;
+}
+
+.pad-9t{
+    padding-top: 9% !important;
+}
+
+:host ::ng-deep .ui-dropdown {
+    border: 1px solid #ced4da !important;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+ul {
+    list-style-type: none;
+}

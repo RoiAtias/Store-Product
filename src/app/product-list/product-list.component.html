@@ -1,0 +1,65 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="ibox">
+                <div class="ibox-title">
+                    <app-product-filter [products]="productsArray" (addProduct)="onAddProduct()"
+                        (searchProduct)="onFilteredProductsList($event)"></app-product-filter>
+                </div>
+                <div class="ibox-content-grid">
+                    <!-- Grid Product -->
+                    <ul class="list-group elements-list">
+                        <li class="list-group-item" [ngClass]="{'active': selectedProduct == product}"
+                            (click)="onSelectProduct(product)" *ngFor="let product of filteredProductsArray">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <div class="dropdown profile-element">
+                                        <img *ngIf="product.thumbnailImage" class="img" alt="image"
+                                            [src]="product.thumbnailImage">
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <strong> {{ product.name }}</strong>
+                                    <p class="small">
+                                        {{product.description}}
+                                    </p>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" pButton icon="pi pi-times"
+                                        (click)="onDelete($event,product.id)" class="ui-button-warning"
+                                        label="Delete"></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item" *ngIf="!filteredProductsArray.length">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    No Products
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+
+            <div *ngIf="selectedProduct" class="ibox pad-9t">
+                <div class="ibox-title">
+                    <h5>{{selectedProduct.name}} Details</h5>
+                </div>
+                <div class="ibox-content">
+                    <app-product-details [selectedProduct]="selectedProduct" (submittedProduct)="onSave($event)">
+                    </app-product-details>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

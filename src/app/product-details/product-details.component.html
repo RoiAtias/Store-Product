@@ -1,0 +1,65 @@
+<div *ngIf="product">
+    
+    <!-- photo -->
+    <div class="row pad10-b">
+        <div class="photos">
+            <img *ngIf="product.thumbnailImage" alt="image" class="img" [src]=[product.thumbnailImage]>
+            <img *ngIf="!product.thumbnailImage" alt="image" class="img" [src]="emptyPreviewPic">
+        </div>
+    </div>
+
+    <form [formGroup]="form">
+
+        <!-- Product Name -->
+        <div class="row form-group">
+            <div class="col-sm-2">
+                <label class="requried" for="name">Name:</label>
+            </div>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="name" name="name" formControlName="name"
+                    [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                    <div *ngIf="f.name.errors.required">Name is Mandatory</div>
+                    <div *ngIf="f.name.errors.pattern">Name must be in letters</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="row form-group">
+            <div class="col-sm-2">
+                <label for="description">Description:</label>
+            </div>
+            <div class="col-sm-8">
+                <input class="form-control" id="description" formControlName="description"
+                    [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+            </div>
+        </div>
+
+        <!-- Price -->
+        <div class="row form-group">
+            <div class="col-sm-2">
+                <label class="requried" for="price">Price:</label>
+            </div>
+            <div class="col-sm-3">
+                <input class="form-control" id="price" formControlName="price"
+                    [ngClass]="{ 'is-invalid': submitted && f.price.errors }" appNumbersOnly />
+                <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                    <div *ngIf="f.price.errors.required">Price is Mandatory</div>
+                    <div *ngIf="f.price.errors.min">Price must be in positive</div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <!-- Save -->
+    <div class="row">
+        <div class="col-sm-10"></div>
+        <div class="col-sm-1">
+            <button type="button" pButton icon="pi pi-check" (click)="onSave()" class="ui-button-success"
+                label=" Save"></button>
+        </div>
+    </div>
+
+</div>

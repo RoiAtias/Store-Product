@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-sm-2">
+        <button type="button" pButton icon="pi pi-plus" (click)="onAddProduct()" class="ui-button-success"
+            label="Add"></button>
+    </div>
+    <div class="col-sm-7">
+        <input type="text" class="form-control input-sm" placeholder="Search Product Name" #SearchProduct="ngModel"
+            name="SearchProduct" id="SearchProduct" [(ngModel)]="searchName" (keyup)="filterItem($event.target.value)">
+    </div>
+    <div class="col-sm-3">
+        <div class="text-right">
+            <p-dropdown [options]="sortOptions" (onChange)="changeSortOption(selectedOption.value)"
+                [(ngModel)]="selectedOption" placeholder="Sort By" optionLabel="label"
+                [style]="{'width':'100px', 'height': '37px'}"></p-dropdown>
+        </div>
+    </div>
+</div>
