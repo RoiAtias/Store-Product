@@ -1,0 +1,26 @@
+.img {
+    float: left;
+    width: 83px;
+    height: 78px;
+    background-size: cover;
+  }
+
+
+.active{
+background-color: #007ad9 !important;
+ } 
+
+.list-group-item {
+    border: 1px solid #e7eaec !important;
+    margin-bottom: 7px  !important;
+    padding: 10px 15px !important;
+    position: relative !important;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.delete-button{
+    margin: auto !important;
+}

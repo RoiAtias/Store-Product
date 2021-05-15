@@ -12,36 +12,10 @@
                 <div class="ibox-content-grid">
                     <!-- Grid Product -->
                     <ul class="list-group elements-list">
-                        <li class="list-group-item" [ngClass]="{'active': selectedProduct == product}"
-                            (click)="onSelectProduct(product)" *ngFor="let product of filteredProductsArray">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <div class="dropdown profile-element">
-                                        <img *ngIf="product.thumbnailImage" class="img" alt="image"
-                                            [src]="product.thumbnailImage">
-                                    </div>
-                                </div>
-                                <div class="col-sm-8">
-                                    <strong> {{ product.name }}</strong>
-                                    <p class="small">
-                                        {{product.description}}
-                                    </p>
-                                </div>
-                                <div class="col-sm-2">
-                                    <button type="button" pButton icon="pi pi-times"
-                                        (click)="onDelete($event,product.id)" class="ui-button-warning"
-                                        label="Delete"></button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item" *ngIf="!filteredProductsArray.length">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    No Products
-                                </div>
-                            </div>
+                        <app-product-item [productList]="filteredProductsArray" [selectedProduct]="selectedProduct" (changesSelectedProduct)="onSelectProduct($event)"
+                        (deleteProduct)="onDeleteProduct($event)" ></app-product-item>
 
-                        </li>
+                       
                     </ul>
 
                 </div>

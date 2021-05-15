@@ -8,9 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './shared.module';
 import { ButtonModule, MessageService, MessagesModule } from 'primeng';
-import { FooterComponent } from './Shared/footer/footer.component';
-import { HeaderComponent } from './Shared/header/header.component';
-import { AppLayoutComponent } from './Shared/Templates/app-layout/app-layout.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { AppLayoutComponent } from './shared/Templates/app-layout/app-layout.component';
 
 @NgModule({
   declarations: [

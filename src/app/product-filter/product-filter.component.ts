@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { SelectItem } from 'primeng';
-import { SortOption } from '../Shared/models/Enums/sortOption.enum';
-import { Product } from '../Shared/models/product.model';
+import { SortOption } from '../shared/models/Enums/sortOption.enum';
+import { Product } from '../shared/models/product.model';
 
 @Component({
   selector: 'app-product-filter',

@@ -2,8 +2,8 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ConfirmationService, MessageService } from 'primeng';
-import { Product } from '../Shared/models/product.model';
-import { ProductService } from '../Shared/Services/product.service';
+import { Product } from '../shared/models/product.model';
+import { ProductService } from '../shared/Services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -34,8 +34,7 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  onDelete(event, productId: number) {
-    event.stopPropagation();
+  onDeleteProduct(productId: number) {
     this.confirmationService.confirm({
       message: 'Are you sure you want to delete the product?',
       accept: () => {

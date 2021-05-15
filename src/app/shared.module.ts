@@ -5,7 +5,8 @@ import { PrimengModule } from './primeng.module';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductFilterComponent } from './product-filter/product-filter.component';
-import { NumbersOnlyDirective } from './Shared/directive/numbers-only.directive';
+import { NumbersOnlyDirective } from './shared/directive/numbers-only.directive';
+import { ProductItemComponent } from './shared/product/product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { NumbersOnlyDirective } from './Shared/directive/numbers-only.directive'
     ProductDetailsComponent,
     ProductFilterComponent,
     NumbersOnlyDirective,
+    ProductItemComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { NumbersOnlyDirective } from './Shared/directive/numbers-only.directive'
   exports: [
     CommonModule,
     ProductListComponent,
+    ProductItemComponent,
     ProductDetailsComponent,
     ProductFilterComponent,
     FormsModule,

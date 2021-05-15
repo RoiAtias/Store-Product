@@ -57,7 +57,7 @@
     <div class="row">
         <div class="col-sm-10"></div>
         <div class="col-sm-1">
-            <button type="button" pButton icon="pi pi-check" (click)="onSave()" class="ui-button-success"
+            <button [disabled]="!form.valid" type="button" pButton icon="pi pi-check" (click)="onSave()" class="ui-button-success"
                 label=" Save"></button>
         </div>
     </div>

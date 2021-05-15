@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { FormMode } from '../Shared/models/Enums/FormMode.enum';
-import { Product } from '../Shared/models/product.model';
+import { FormMode } from '../shared/models/Enums/FormMode.enum';
+import { Product } from '../shared/models/product.model';
 
 @Component({
   selector: 'app-product-details',
